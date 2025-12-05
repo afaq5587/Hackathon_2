@@ -4,14 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "todo-cli"
-version = "1.0.0"
-description = "A simple command-line task management application"
+version = "1.1.0"
+description = "A simple command-line task management application (Intermediate Edition)"
 readme = "README.md"
 authors = [
     {name = "ToDo Team", email = "team@example.com"}
 ]
 requires-python = ">=3.7"
-dependencies = []
+dependencies = [
+    "colorama",
+    "tabulate"
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",
@@ -32,7 +35,7 @@ test = ["pytest>=6.0", "pytest-cov>=2.12"]
 dev = ["black", "flake8", "isort", "mypy"]
 
 [project.scripts]
-todo = "src.todo:main"
+todo = "src.cli.main:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
