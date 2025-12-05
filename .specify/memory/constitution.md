@@ -1,31 +1,31 @@
-# [PROJECT_NAME] Constitution
+# ToDo CLI Constitution
 <!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
+### I. Simple CLI Design
 <!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
+The CLI should be simple, clear, and predictable, with a focus on core features: Add, Delete, Update, List, and Complete.
 <!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
 
-### [PRINCIPLE_2_NAME]
+### II. Task Model Separation
 <!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
+The application should maintain a clean separation between the Task model and the TaskManager.
 <!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
 
-### [PRINCIPLE_3_NAME]
+### III. Persistence Ready
 <!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
+The code must be designed to be extensible for later persistence (e.g., JSON or database).
 <!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
 
-### [PRINCIPLE_4_NAME]
+### IV. Documentation and Tests
 <!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
+The project should include minimal but useful documentation and tests.
 <!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
 
-### [PRINCIPLE_5_NAME]
+### V. Error Handling
 <!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
+All errors should return non-zero exit codes with clear error messages.
 <!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
 
 ### [PRINCIPLE_6_NAME]

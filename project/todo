@@ -1,0 +1,12 @@
+#!/bin/bash
+# ToDo CLI - Bash Wrapper (for Linux/Mac/Git Bash)
+# Usage: todo add "Task title"
+#        todo list
+#        todo update 1 "New title"
+#        todo delete 1
+#        todo complete 1
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Call Python script with all arguments
+python "$SCRIPT_DIR/src/todo.py" "$@"

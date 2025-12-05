@@ -1,0 +1,1 @@
+# Data Model: ToDo CLI App\n\n## Entities\n\n-   **Task**: Represents a single to-do item.\n    -   Attributes:\n        -   id (integer, unique)\n        -   title (string)\n        -   description (string, optional)\n        -   completed (boolean)\n        -   created\_at (ISO timestamp)\n\n## Relationships\n\n-   One-to-many relationship: A user can have multiple tasks.
