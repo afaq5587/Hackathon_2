@@ -3,7 +3,7 @@ from typing import Optional
 from ..services.task_service import TaskService
 from ..models.task import TaskStatus
 from . import commands
-from . import display
+from . import rich_display as display
 
 def get_input(prompt: str, required: bool = True) -> Optional[str]:
     """Helper to get input with optional validation."""
@@ -81,17 +81,21 @@ def handle_filter(service: TaskService):
     input("\nPress Enter to continue...")
 
 def interactive_loop(service: TaskService):
+    options = {
+        "1": "Add Task",
+        "2": "List Tasks",
+        "3": "Update Task",
+        "4": "Complete Task",
+        "5": "Delete Task",
+        "6": "Search",
+        "7": "Filter by Status",
+        "8": "Clear Completed",
+        "9": "Exit"
+    }
+
     while True:
         display.print_welcome()
-        print("\n1. Add Task")
-        print("2. List Tasks")
-        print("3. Update Task")
-        print("4. Complete Task")
-        print("5. Delete Task")
-        print("6. Search")
-        print("7. Filter by Status")
-        print("8. Clear Completed")
-        print("9. Exit")
+        display.print_menu(options)
         
         choice = input("\nSelect an option (1-9): ").strip()
         
@@ -114,7 +118,7 @@ def interactive_loop(service: TaskService):
             commands.cmd_clear(service)
             input("\nPress Enter to continue...")
         elif choice == "9":
-            print("Goodbye!")
+            display.print_info("Goodbye!")
             break
         else:
             display.print_error("Invalid option")

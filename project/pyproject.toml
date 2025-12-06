@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "todo-cli"
 version = "1.1.0"
-description = "A simple command-line task management application (Intermediate Edition)"
+description = "A simple command-line task management application (PRO Edition)"
 readme = "README.md"
 authors = [
     {name = "ToDo Team", email = "team@example.com"}
@@ -13,7 +13,9 @@ authors = [
 requires-python = ">=3.7"
 dependencies = [
     "colorama",
-    "tabulate"
+    "tabulate",
+    "rich",
+    "plyer"
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
