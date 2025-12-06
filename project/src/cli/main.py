@@ -2,16 +2,23 @@ import argparse
 import sys
 from ..storage.json_storage import JsonStorage
 from ..services.task_service import TaskService
+from ..services.notification_service import NotificationService
 from . import commands
-from . import display
+from . import rich_display as display
 
 def main():
     """Main entry point for the CLI application."""
     storage = JsonStorage()
     service = TaskService(storage)
 
+    # Check for incomplete tasks and notify
+    NotificationService.notify_incomplete_tasks(service.list_tasks())
+
+    # Show welcome banner
+    display.print_banner()
+
     parser = argparse.ArgumentParser(
-        description="ToDo CLI - Intermediate Edition",
+        description="ToDo CLI - PRO Edition",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

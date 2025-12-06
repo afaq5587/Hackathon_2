@@ -2,7 +2,7 @@ import sys
 from typing import Optional
 from ..services.task_service import TaskService
 from ..models.task import TaskStatus
-from . import display
+from . import rich_display as display
 
 def cmd_add(service: TaskService, title: str, description: Optional[str]):
     """Handle add command."""
@@ -55,7 +55,7 @@ def cmd_search(service: TaskService, keyword: str):
         display.print_success(f"Found {len(tasks)} tasks matching '{keyword}':")
         display.print_tasks(tasks)
     else:
-        print(f"No tasks found matching '{keyword}'.")
+        display.print_info(f"No tasks found matching '{keyword}'.")
 
 def cmd_filter(service: TaskService, status: str):
     """Handle filter command."""
@@ -74,4 +74,4 @@ def cmd_clear(service: TaskService):
     if count > 0:
         display.print_success(f"Cleared {count} completed tasks.")
     else:
-        print("No completed tasks to clear.")
+        display.print_info("No completed tasks to clear.")

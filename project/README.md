@@ -1,4 +1,4 @@
-# ToDo CLI Application (Intermediate Edition)
+# ToDo CLI Application (PRO Edition)
 
 A robust command-line task management application built with Python, featuring persistent storage, rich output, and advanced management commands.
 

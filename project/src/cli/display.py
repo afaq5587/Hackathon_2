@@ -88,7 +88,7 @@ def print_tasks(tasks: List[Task]):
                 print(f"       └─ {task.description}")
 
 def print_welcome():
-    title = "ToDo CLI - Intermediate Edition"
+    title = "ToDo CLI - PRO Edition"
     width = shutil.get_terminal_size().columns
     print("=" * width)
     print(title.center(width))
